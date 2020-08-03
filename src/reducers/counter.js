@@ -1,9 +1,9 @@
-const counterReducer = (state = {data:{name:''}},action) =>{
+const counterReducer = (state = 0,action) =>{
     switch(action.type){
         case 'INCREMENT':
-            return state = {data:{name:"maqsood"}};
+            return state = state + 1;
         case 'DECREMENT':
-            return state= {data:{name:"ahmed"}}
+            return state= state-1
         default:
             return state
     }

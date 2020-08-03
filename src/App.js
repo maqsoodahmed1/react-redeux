@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import {useSelector,useDispatch} from 'react-redux'
 import {increment,decrement} from './actions'
 import Component from './Component'
+
 import './App.css';
 
 function App() {
@@ -11,11 +12,12 @@ function App() {
   return (
     <div className="App">
       {console.log(counter)}
-   <h1>Hello {counter.data.name}</h1>
+   <h1>Hello {counter}</h1>
    <Component/>
    <button onClick = {()=>dispatch(increment())} > +</button>
    <button onClick = {()=>dispatch(decrement())}>-</button>
     </div>
+  
   );
 }
 
