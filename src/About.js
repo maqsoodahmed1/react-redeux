@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import {useSelector,useDispatch} from 'react-redux'
-import { Input } from 'antd';
+// import { Input } from 'antd';
+import { Form, Input, Button, Checkbox } from 'antd';
 
 
 function About(props) {
@@ -17,20 +18,58 @@ const [state, setState] = React.useState({
 // console.log(...state)
   setState({
     ...state,
-    [evt.target.name]: value
+    [evt.target.name]: evt.target.value
   });
 }
+const onFinish = values =>{
+  console.log('the values =>',values)
+}
 
-// useEffect(()=>{
-//   console.log('props,',props)
-// })
-// console.log('the input value =>',values.input)
+
+
   return (
       <div>
+        <Form
+      
+      name="basic"
+      initialValues={{ remember: true }}
+      onFinish={onFinish}
+      // onFinishFailed={onFinishFailed}
+    >
+      <Form.Item
+        label="Username"
+        name="username"
+        rules={[{ required: true, message: 'Please input your username!' }]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        label="Password"
+        name="password"
+        rules={[{ required: true, message: 'Please input your password!' }]}
+      >
+        <Input.Password />
+      </Form.Item>
+
+      <Form.Item  name="remember" valuePropName="checked">
+        <Checkbox>Remember me</Checkbox>
+      </Form.Item>
+
+      <Form.Item >
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+      </Form.Item>
+    </Form>
+
+
+
+
   <h1>About</h1>
   <h1>{counter}</h1>
 {/* <Input placeholder="Basic usage" name = "input"/> */}
-  <form>
+  {/* <form>
       <label>
         First name
         <input
@@ -49,7 +88,7 @@ const [state, setState] = React.useState({
           onChange={handleChange}
         />
       </label>
-    </form>
+    </form> */}
   </div>
     )
 }

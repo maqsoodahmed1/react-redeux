@@ -14,8 +14,8 @@ function App() {
       {console.log(counter)}
    <h1>Hello {counter}</h1>
    <Component/>
-   <button onClick = {()=>dispatch(increment())} > +</button>
-   <button onClick = {()=>dispatch(decrement())}>-</button>
+   <button onClick = {()=>dispatch(increment(12))} > +</button>
+   <button onClick = {()=>dispatch(decrement(-12))}>-</button>
     </div>
   
   );

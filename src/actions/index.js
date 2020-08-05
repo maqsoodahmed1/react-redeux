@@ -1,13 +1,16 @@
 import { Provider } from "react-redux"
 
- export  const increment = () =>{
+ export  const increment = (value) =>{
+     console.log('the value =>',value)
     return {
-        type:'INCREMENT'
+        type:'INCREMENT',
+        data:value
     }
 }
 
-export const decrement = () =>{
+export const decrement = (value) =>{
     return {
-        type:'DECREMENT'
+        type:'DECREMENT',
+        data:value
     }
 }
